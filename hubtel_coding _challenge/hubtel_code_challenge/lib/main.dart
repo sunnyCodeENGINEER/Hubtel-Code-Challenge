@@ -55,66 +55,79 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              color: Colors.grey[400],
+              margin: const EdgeInsets.only(top: 50),
+              height: 50,
+              // width: 300,
+              decoration: BoxDecoration(
+                color: Colors.grey[400],
+              ),
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   // History Button
+
                   Container(
+                    margin: const EdgeInsets.only(left: 10),
                     width: 100,
                     height: 20,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(5)),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: Colors.white),
                     child: const Text("History"),
                   ),
                   // Transaction Summary Button
                   Container(
+                    padding: const EdgeInsets.only(left: 10),
+                    alignment: Alignment.center,
                     width: 100,
                     height: 20,
-                    decoration:
-                        BoxDecoration(borderRadius: BorderRadius.circular(5)),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.grey[400],
+                    ),
                     child: const Text("Transaction Summary"),
                   ),
                 ],
               ),
             ),
-            const Divider(),
-            Row(
-              children: [
-                const TextField(),
-                ListView(
-                  children: const [
-                    TransactionCard(
-                      name: "Emmanuel Rockson Kwabena Uncle Ebo",
-                      icon: "",
-                      status: "Successful",
-                    ),
-                    TransactionCard(
-                      name: "Absa Bank",
-                      icon: "",
-                      status: "Unsuccessful",
-                    ),
-                    TransactionCard(
-                      name: "Emmanuel Rockson",
-                      icon: "",
-                      status: "Successful",
-                    ),
-                    TransactionCard(
-                      name: "Emmanuel Rockson",
-                      icon: "",
-                      status: "Successful",
-                    ),
-                  ],
-                )
-              ],
+            const SingleChildScrollView(
+              child: Column(
+                children: [
+                  TextField(),
+                  Column(
+                    children: [
+                      TransactionCard(
+                        name: "Emmanuel Rockson Kwabena Uncle Ebo",
+                        icon: "",
+                        status: "Successful",
+                      ),
+                      // TransactionCard(
+                      //   name: "Absa Bank",
+                      //   icon: "",
+                      //   status: "Unsuccessful",
+                      // ),
+                      // TransactionCard(
+                      //   name: "Emmanuel Rockson",
+                      //   icon: "",
+                      //   status: "Successful",
+                      // ),
+                      // TransactionCard(
+                      //   name: "Emmanuel Rockson",
+                      //   icon: "",
+                      //   status: "Successful",
+                      // ),
+                    ],
+                  )
+                ],
+              ),
             )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      bottomNavigationBar: new Stack(
+        children: [Text("data")],
+      ),
     );
   }
 }

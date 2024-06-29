@@ -18,11 +18,31 @@ class TransactionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.all(50),
       width: 600,
-      height: 300,
+      height: 200,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(5)
+        border: Border.all(color: Colors.grey, style: BorderStyle.solid),
+        borderRadius: BorderRadius.circular(5),
       ),
+      child: Column(children: [
+        Text(time),
+        Row(
+          children: [
+            Column(
+              children: [Text(name), Text(number)],
+            ),
+            Column(
+              children: [
+                Container(
+                  child: Text(status),
+                ),
+                const Text("GHS 500")
+              ],
+            )
+          ],
+        )
+      ]),
     );
   }
 }
